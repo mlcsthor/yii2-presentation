@@ -1,0 +1,22 @@
+{
+    "name": "mlcsthor/yii2-presentation",
+    "description": "Yii2 extension for export to Powerpoint",
+    "type": "yii2-extension",
+    "licence": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Maxime Lucas",
+            "email": "mlcsthor@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+      "yiisoft/yii2": "^2.0@dev",
+      "phpoffice/phppresentation": "dev-master"
+    },
+    "autoload": {
+      "psr-4": {
+        "mlcsthor\\presentation\\": "src"
+      }
+    }
+}
