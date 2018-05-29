@@ -198,7 +198,7 @@ class Presentation extends Component {
 
                 if (is_array($textData)) {
                     $text = $shape->createText($textData['content']);
-                    $this->setFontProperties($text->getFont(), $textData['font'] ?? []);
+                    $this->setFontProperties($shape->getActiveParagraph()->getFont(), $textData['font'] ?? []);
                 } else {
                     $shape->createText($textData);
                 }
