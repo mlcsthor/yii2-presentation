@@ -3,7 +3,6 @@
     "description": "Yii2 extension for export to Powerpoint",
     "type": "yii2-extension",
     "license": "BSD-3-Clause",
-    "version": "1.0",
     "authors": [
         {
             "name": "Maxime Lucas",
