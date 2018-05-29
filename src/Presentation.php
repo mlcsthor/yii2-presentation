@@ -10,6 +10,7 @@
 namespace mlcsthor\presentation;
 
 use PhpOffice\PhpPresentation\AbstractShape;
+use PhpOffice\PhpPresentation\DocumentLayout;
 use PhpOffice\PhpPresentation\DocumentProperties;
 use PhpOffice\PhpPresentation\IOFactory;
 use PhpOffice\PhpPresentation\PhpPresentation;
@@ -174,6 +175,15 @@ class Presentation extends Component {
         $document = $this->getDocument();
 
         $this->setDocumentProperties($this->data['document'] ?? []);
+
+        if (isset($this->data['layout'])) {
+            if (is_array($this->data['layout'])) {
+                $this->getDocument()->getLayout()->setCX($this->data['layout']['x'], $this->data['units'] ?? DocumentLayout::UNIT_EMU);
+                $this->getDocument()->getLayout()->setCX($this->data['layout']['y'], $this->data['units'] ?? DocumentLayout::UNIT_EMU);
+            } else {
+                $this->getDocument()->getLayout()->setDocumentLayout($this->data['layout']);
+            }
+        }
 
         foreach ($this->data['slides'] as $slideData) {
             $slide = $document->getActiveSlide();
